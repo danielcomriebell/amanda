@@ -1,0 +1,65 @@
+@import '../sass/mixins';
+@import '../sass/variables';
+
+.menu{
+  display: block;
+  position: fixed;
+  height: 50px;
+  z-index:26;
+  width: 100vw;
+  background-color: white;
+  .burger{
+    width: 40px;
+    left: 15px;
+    position: relative;
+    top: 15px;
+  }
+}
+
+.menu-container{
+  width: 100vw;
+  position: fixed;
+  height: 100vh;
+  background-color: black;
+  // opacity: .75;
+  z-index: 25;
+  transform: translateY(100vh);
+  transition: all .4s ease-in;
+  ul{
+    width: 250px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    li{
+      margin-bottom: 15px;
+    }
+    p{
+      a{
+        text-decoration: none;
+        color: white;
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+.logo{
+  position: relative;
+  width: 150px;
+  float: right;
+  margin-top: -25px;
+  line-height: 50px;
+}
+
+.init-menu{
+  transform: translateY(0);
+}
+
+.top,.middle,.bottom {
+  transition: all 0.35s linear;
+}
+
+.top.open { transform: translateY(60px) }
+.bottom.open { transform: translateY(-60px) }

@@ -1,0 +1,32 @@
+@import '../sass/mixins';
+@import '../sass/variables';
+
+
+.rates-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: space-between;
+  justify-content: space-around;
+  position: relative;
+  padding-top: 100px;
+  flex-wrap:wrap;
+  top: 50%;
+  height: 100vh;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  @include fadeInAnimation();
+  .rates{
+    width: 30%;
+    margin-bottom: 50px;
+    text-align: justify;
+    img{
+      width: 100%;
+    }
+    @include respond-to(phone){
+      width: 100%;
+    }
+  }
+}
+@include fadein();

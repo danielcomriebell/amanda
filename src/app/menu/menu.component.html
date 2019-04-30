@@ -1,0 +1,19 @@
+<div class="menu">
+  <div (click) ="initSlide()" class="burger">
+    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.33 149.26">
+      <rect [ngClass]="{'open':openMenu}" class="top" width="348.33" height="28.7"/>
+      <rect [ngClass]="{'open':openMenu}" class="middle" y="60.28" width="348.33" height="28.7"/>
+      <rect [ngClass]="{'open':openMenu}" class="bottom" y="120.56" width="348.33" height="28.7"/>
+    </svg>
+  </div>
+
+  <div class="logo">
+    <p>makeup by amanda</p>
+  </div>
+</div>
+
+<div [ngClass]="{'init-menu':openMenu}" class="menu-container">
+  <ul>
+    <li *ngFor="let menu of menuItems"><p><a (click)="initSlide()" [routerLink]="['/' + menu.url]">{{menu.title}}</a></p></li>
+  </ul>
+</div>

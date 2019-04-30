@@ -1,0 +1,122 @@
+// MEDIA QUERIES
+// @Author: Elia Fornari
+
+$break-phone: 767px;
+$break-phone-landscape: 767px;
+$break-tablet: 1022px;
+$break-tablet-landscape: 1024px;
+$break-laptop-small: 1280px;
+$break-laptop-medium: 1440px;
+$break-laptop-large: 1920px;
+$break-desktop: 50000px;
+/*$break-large-desktop: 2500px;*/
+/*$break-infinite: 500000px;*/
+
+@mixin respond-to($media) {
+/*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/
+  @if $media == desktop {
+    @media only screen and (min-width: $break-laptop-large + 1) and (max-width: $break-desktop) { @content; }
+  }
+  @else if $media == laptop-large {
+    @media only screen and (min-width: $break-laptop-medium + 1) and (max-width: $break-laptop-large) { @content; }
+  }
+  @else if $media == laptop-medium {
+    @media only screen and (min-width: $break-laptop-small + 1) and (max-width: $break-laptop-medium) { @content; }
+  }
+  @else if $media == laptop-small {
+    @media only screen and (min-width: $break-tablet + 1) and (max-width: $break-laptop-small) { @content; }
+  }
+
+  ////////////|||||||||||..just changed the tablet media query below because it was not reading the landscape view: 1024px is the tablet landscape width..||||||||||||||\\\\\\\\\\
+
+  @else if $media == tablet-landscape {
+    @media only screen and (min-width: $break-phone + 1) and (max-width: $break-tablet-landscape) and (orientation: landscape) { @content; }
+  }
+  @else if $media == tablet-portrait {
+    @media only screen and (min-width: $break-phone + 1) and (max-width: $break-tablet) and (orientation: portrait) { @content; }
+  }
+  @else if $media == phone {
+    @media only screen and (min-width: 0px) and (max-width: $break-phone) { @content; }
+  }
+
+  //These are only for the real device
+  @else if $media == tablet-landscape-device {
+    @media only screen and (min-device-width: $break-phone + 1) and (max-device-width: $break-tablet) and (orientation: landscape) { @content; }
+  }
+  @else if $media == tablet-portrait-device {
+    @media only screen and (min-device-width: $break-phone + 1) and (max-device-width: $break-tablet) and (orientation: portrait) { @content; }
+  }
+  @else if $media == phone-device {
+    @media only screen and (min-width: 0px) and (max-device-width: $break-phone) { @content; }
+  }
+  @else if $media == phone-landscape-device {
+        @media only screen and (min-width: 0px) and (max-width: $break-phone) and (orientation: landscape) { @content; }
+      }
+}
+
+
+@mixin fadein(){
+
+  @keyframes fadein{
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @-webkit-keyframes fadein{
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @-ms-keyframes fadein{
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @-moz-keyframes fadein{
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @-o-keyframes fadein{
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}
+
+
+@mixin fadeInAnimation(){
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+   -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+       animation: fadein 2s;
+}
+
+@mixin blurin(){
+
+  @keyframes blurin{
+    from { filter: blur(5px); }
+    to   { filter: blur(0px); }
+  }
+  @-webkit-keyframes blurin{
+    from { filter: blur(5px); }
+    to   { filter: blur(0px); }
+  }
+  @-ms-keyframes blurin{
+    from { filter: blur(5px); }
+    to   { filter: blur(0px); }
+  }
+  @-moz-keyframes blurin{
+    from { filter: blur(5px); }
+    to   { filter: blur(0px); }
+  }
+  @-o-keyframes blurin{
+    from { filter: blur(5px); }
+    to   { filter: blur(0px); }
+  }
+}
+
+
+@mixin blurInAnimation(){
+  -moz-animation: blurin 2s; /* Firefox < 16 */
+   -ms-animation: blurin 2s; /* Internet Explorer */
+    -o-animation: blurin 2s; /* Opera < 12.1 */
+       animation: blurin 2s;
+}
